@@ -13,7 +13,7 @@ function nofollowexternal_info() {
         "website" => "",
         "author" => "Matthew DeSantis",
         "authorsite" => "http://www.anarchy46.net/",
-        "version" => "1.0",
+        "version" => "1.1",
         "guid"  => "2b874bd1e9ee6153673957629d68ef12",
         "compatibility" => "*"
         );
