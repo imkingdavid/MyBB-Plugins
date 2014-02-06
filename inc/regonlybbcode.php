@@ -13,7 +13,7 @@ function regonlybbcode_info() {
         "website"       => "",
         "author"        => "Matthew DeSantis",
         "authorsite"    => "http://www.anarchy46.net/",
-        "version"       => "1.0",
+        "version"       => "1.1",
         "guid"          => "f5cec23b731e094ea29d54b769909c07",
         "compatibility" => "*"
     );
@@ -65,7 +65,7 @@ function regonlybbcode_is_installed() {
 function regonlybbcode_get($message) {
     global $mybb;
     $tag = preg_quote($mybb->settings['regonlybbcodetag']);
-    if ($tag != "") $message = preg_replace_callback("/\\[".$tag."\\](.+)\\[\\/".$tag."\\]/si",  "regonly_display", $message);
+    if ($tag != "") $message = preg_replace_callback("/\\[".$tag."\\](.+)\\[\\/".$tag."\\]/siU",  "regonly_display", $message);
     return $message;
 }
 function regonly_display($groups) {
@@ -77,4 +77,3 @@ function regonly_display($groups) {
         return $groups[1];
     }
 }
-?>
