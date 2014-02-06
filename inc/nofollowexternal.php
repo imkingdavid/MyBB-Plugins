@@ -25,8 +25,8 @@ function nofollowexternal_changelink($message) {
 }
 function replace_external($groups) {
     global $mybb;
-    $url = str_replace(array(".", "/"), array("\\.", "\\/"), $mybb->settings['bburl']);
-    $urls = preg_replace("/^http/","https", $url, 1);
+    $url = preg_quote($mybb->settings['bburl']);
+    $urls = preg_replace("/^http:/","https:", $url, 1);
     if (preg_match("/$url/", $groups[1]) || preg_match("/$urls/", $groups[1])) {
         return $groups[0];
     }
