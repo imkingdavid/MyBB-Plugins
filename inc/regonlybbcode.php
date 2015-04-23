@@ -23,7 +23,7 @@ function regonlybbcode_install() {
     $query = $db->simple_select("settinggroups", "COUNT(*) as rows");
     $rows = $db->fetch_field($query, "rows");
     $db->insert_query('settinggroups', array(
-        'gid'           => 'NULL'
+        'gid'           => 'NULL',
         'name'          => 'regonlybbcode',
         'title'         => 'Registered Only BBCode Settings',
         'description'   => 'Seetings for Regonly BBCode',
